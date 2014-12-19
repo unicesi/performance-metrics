@@ -604,7 +604,6 @@ public class ActualMetricsPanel extends JPanel {
 		parent.repaint();
 		
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
-			@Override
 			public void run() { 
 				parent.getHorizontalScrollBar()
 					.setValue(parent.getHorizontalScrollBar().getMaximum());

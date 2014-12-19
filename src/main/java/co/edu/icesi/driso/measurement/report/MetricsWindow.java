@@ -138,7 +138,6 @@ public class MetricsWindow extends JFrame implements ActionListener {
 					new SpinnerNumberModel(initialFrameWidth, 200, 10000, 100));
 			viewportSizeSpinner.setFocusable(false);
 			viewportSizeSpinner.addChangeListener(new ChangeListener() {
-				@Override
 				public void stateChanged(ChangeEvent e) {
 					((ActualMetricsPanel) metricsPanel)
 					.setViewportWidth((Integer) viewportSizeSpinner.getValue());
@@ -152,7 +151,6 @@ public class MetricsWindow extends JFrame implements ActionListener {
 					new SpinnerNumberModel(initialScaleFactor, 0, 1000, 10));
 			scaleFactorSpinner.setFocusable(false);
 			scaleFactorSpinner.addChangeListener(new ChangeListener() {
-				@Override
 				public void stateChanged(ChangeEvent e) {
 					((ActualMetricsPanel) metricsPanel)
 					.setScaleFactor((Integer) scaleFactorSpinner.getValue());
@@ -175,7 +173,6 @@ public class MetricsWindow extends JFrame implements ActionListener {
 		setLocationRelativeTo(null);
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		String command = e.getActionCommand();
 

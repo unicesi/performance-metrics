@@ -96,7 +96,6 @@ public class MainAPVillota {
 		}
 		
 		java.awt.EventQueue.invokeLater(new Runnable() {
-			@Override
 			public void run() {
 				MetricsWindow w1 = new MetricsWindow(
                 		MetricsWindow.ChartType.CALCULATED_METRICS,
@@ -201,7 +200,6 @@ public class MainAPVillota {
 //		}
 		
 		java.awt.EventQueue.invokeLater(new Runnable() {
-			@Override
 			public void run() {
 				MetricsWindow w1 = new MetricsWindow(
                 		MetricsWindow.ChartType.CALCULATED_METRICS,
