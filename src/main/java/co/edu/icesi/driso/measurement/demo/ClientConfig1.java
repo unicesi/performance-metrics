@@ -20,6 +20,10 @@ import co.edu.icesi.driso.measurement.metrics.MetricException;
  */
 public class ClientConfig1 extends MetricConfig {
 
+	public ClientConfig1(String configFile) {
+		super(configFile);
+	}
+
 	/**
 	 * Default serial version UID
 	 */
@@ -288,23 +292,8 @@ public class ClientConfig1 extends MetricConfig {
 	}
 
 	@Override
-	public String[] configureAttributes() {
-		return new String[]{};
-	}
-
-	@Override
-	public String getIdentifier() {
-		return "apvillota";
-	}
-
-	@Override
 	public double scaleValue(long measurementValue) {
 		return measurementValue;
-	}
-
-	@Override
-	public String getMeasureUnit() {
-		return "ms";
 	}
 	
 }

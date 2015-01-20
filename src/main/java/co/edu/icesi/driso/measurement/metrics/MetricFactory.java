@@ -1,5 +1,6 @@
 package co.edu.icesi.driso.measurement.metrics;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 
 /**
@@ -12,13 +13,27 @@ import java.util.HashMap;
  */
 public class MetricFactory {
 	
+	
+	
 	/**
-	 * The collection containing the registered configuration classes
+	 * Contains the registered configuration classes
 	 */
-	private static HashMap<String, Class<? extends MetricConfig>> configs;
+	private static HashMap<String, Class<? extends MetricConfig>> configClasses;
+	
+	/**
+	 * Contains the registered configuration files
+	 */
+	private static HashMap<String, String> configFiles;
+	
+	/**
+	 * Contains already created instances for each configuration class
+	 */
+	private static HashMap<String, MetricConfig> configInstances;
 	
 	static {
-		configs = new HashMap<String, Class<? extends MetricConfig>>();
+		configClasses = new HashMap<String, Class<? extends MetricConfig>>();
+		configFiles = new HashMap<String, String>();
+		configInstances = new HashMap<String, MetricConfig>();
 	}
 
 	/**
@@ -31,16 +46,32 @@ public class MetricFactory {
 	 */
 	public static Metric getMetric(String criterion, String identifier) throws MetricException {
 		
-		Class<? extends MetricConfig> clazz = configs.get(criterion);
+		Class<? extends MetricConfig> clazz = configClasses.get(criterion);
+		String configFile = configFiles.get(criterion);
 		
 		if(clazz != null){
 			try {
 				
-				return new Metric(identifier, clazz.newInstance());
+				MetricConfig configInstance = configInstances.get(criterion);
+				
+				if(configInstance == null){
+					configInstance = clazz.getConstructor(String.class).newInstance(configFile);
+					configInstances.put(criterion, configInstance);
+				}
+				
+				return new Metric(identifier, configInstance);
 				
 			} catch (InstantiationException e) {
 				e.printStackTrace();
 			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				e.printStackTrace();
+			} catch (NoSuchMethodException e) {
+				e.printStackTrace();
+			} catch (SecurityException e) {
 				e.printStackTrace();
 			}
 		}else{
@@ -59,14 +90,15 @@ public class MetricFactory {
 	 * @param configClass
 	 * @throws MetricException
 	 */
-	public static void registerConfigClass(String criterion, 
+	public static void registerConfigClass(String criterion, String configFile, 
 			Class<? extends MetricConfig> configClass) throws MetricException {
 
-		if(configs.containsKey(criterion)){
+		if(configClasses.containsKey(criterion)){
 			throw new MetricException(12, "There is a configuration class already"
 					+ " set to criterion " + criterion);
 		}else{
-			configs.put(criterion, configClass);
+			configClasses.put(criterion, configClass);
+			configFiles.put(criterion, configFile);
 		}
 	}
 	

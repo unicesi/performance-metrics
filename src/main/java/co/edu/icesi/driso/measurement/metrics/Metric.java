@@ -292,11 +292,20 @@ public class Metric implements Serializable {
 								"-" + tempStage.getName();
 					
 					if(this.measurements.get(key) == null){
-						// TODO: Validate if there is a default level, then to not show level ""
-						throw new MetricException(3, "Phase \"" + tempPhase.getName() + 
+
+						String message = "Phase \"" + tempPhase.getName() + 
 								"\", level \"" + tempLevel.getName() + "\", in stage \"" 
 								+ tempStage.getName() + "\", must be set before generating "
-								+ "the report. Note this validation is case sensitive");
+								+ "the report. Note this validation is case sensitive";
+						
+						if(tempLevel.getName().equals(MeasurementPhase.Level.DEFAULT_NAME)){
+							message = "Phase \"" + tempPhase.getName() + 
+									"\", in stage \"" 
+									+ tempStage.getName() + "\", must be set before generating "
+									+ "the report. Note this validation is case sensitive";
+						}
+						
+						throw new MetricException(3, message);
 					}
 				}
 			}

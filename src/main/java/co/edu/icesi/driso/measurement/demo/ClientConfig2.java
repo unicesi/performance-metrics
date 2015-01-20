@@ -20,6 +20,10 @@ import co.edu.icesi.driso.measurement.metrics.MetricException;
  */
 public class ClientConfig2 extends MetricConfig {
 
+	public ClientConfig2(String configFile) {
+		super(configFile);
+	}
+
 	/**
 	 * Default serial version UID
 	 */
@@ -30,18 +34,7 @@ public class ClientConfig2 extends MetricConfig {
 		// configured phases
 		List<MeasurementPhase> phases = new ArrayList<MeasurementPhase>();
 		
-		// Stages
-		MeasurementPhase.Stage start = new MeasurementPhase.Stage("Start", true);
-		MeasurementPhase.Stage end = new MeasurementPhase.Stage("End", true);
-		MeasurementPhase.Stage[] stages = {start, end};
-		
-		// Levels
-		MeasurementPhase.Level one = new MeasurementPhase.Level("One", stages);
-		MeasurementPhase.Level two = new MeasurementPhase.Level("Two", stages);
-		MeasurementPhase.Level three = new MeasurementPhase.Level("Three", stages);
-		MeasurementPhase.Level[] levels = {one, two, three};
-		
-		MeasurementPhase sorting = new MeasurementPhase("Sorting", stages){
+		MeasurementPhase sorting = new MeasurementPhase("Sorting"){
 		
 			private static final long serialVersionUID = 1L;
 			
@@ -102,7 +95,7 @@ public class ClientConfig2 extends MetricConfig {
 			}
 		};
 		
-		MeasurementPhase invented = new MeasurementPhase("Distribution", stages){
+		MeasurementPhase invented = new MeasurementPhase("Distribution"){
 			
 			private static final long serialVersionUID = 1L;
 			
@@ -164,8 +157,7 @@ public class ClientConfig2 extends MetricConfig {
 			}
 		};
 		
-		
-		MeasurementPhase merge = new MeasurementPhase("Merge", levels){
+		MeasurementPhase merge = new MeasurementPhase("Merge"){
 			
 				private static final long serialVersionUID = 1L;
 				
@@ -230,23 +222,8 @@ public class ClientConfig2 extends MetricConfig {
 	}
 
 	@Override
-	public String[] configureAttributes() {
-		return new String[]{"NODE", "COMPOSITE", "COMPONENT"};
-	}
-
-	@Override
-	public String getIdentifier() {
-		return "apvillota";
-	}
-
-	@Override
 	public double scaleValue(long measurementValue) {
 		return measurementValue / 10.0;
-	}
-
-	@Override
-	public String getMeasureUnit() {
-		return "s";
 	}
 	
 }

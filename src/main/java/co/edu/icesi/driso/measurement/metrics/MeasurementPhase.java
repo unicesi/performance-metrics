@@ -107,7 +107,7 @@ public class MeasurementPhase implements Serializable {
 		 * Default name to be used when a measurement phase is created without
 		 * levels; this name is assigned to an automatically created one.
 		 */
-		public static final String DEFAULT_NAME = "";
+		public static final String DEFAULT_NAME = "DEFAULT-LEVEL";
 		
 		/**
 		 * The stage's name and also identifier (must be unique)
@@ -151,7 +151,7 @@ public class MeasurementPhase implements Serializable {
 	/**
 	 * The levels composing the measurement phase
 	 */
-	private final Level[] levels;
+	private Level[] levels;
 	
 	public MeasurementPhase(String name, Level[] levels) throws MetricException {
 		this.name = name;
@@ -170,6 +170,10 @@ public class MeasurementPhase implements Serializable {
 		
 		Level defaultLevel = new Level(Level.DEFAULT_NAME, stages);
 		levels = new Level[]{defaultLevel};
+	}
+	
+	public MeasurementPhase(String name){
+		this.name = name;
 	}
 	
 	private void validateLevels() throws MetricException {
@@ -292,6 +296,17 @@ public class MeasurementPhase implements Serializable {
 	
 	public Level[] getLevels(){
 		return levels;
+	}
+	
+	public void setLevels(Level[] levels) throws MetricException{
+		this.levels = levels;
+		
+		if(levels.length == 0){
+			throw new MetricException(9, 
+					"The levels array must contain at least one element");
+		}else{
+			validateLevels();
+		}
 	}
 
 }

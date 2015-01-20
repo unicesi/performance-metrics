@@ -24,7 +24,11 @@ public class Client {
 
 		String path = "/Users/migueljimenez/Desktop";
 
-		MetricFactory.registerConfigClass("apvillota", ClientConfig2.class);
+		MetricFactory.registerConfigClass(
+				"apvillota", 
+				"co/edu/icesi/driso/measurement/demo/config1.properties", 
+				ClientConfig2.class);
+		
 		father = MetricFactory.getMetric("apvillota", "grid0-control");
 
 		Metric child1 = MetricFactory.getMetric("apvillota", "grid11-apvillota-01");
@@ -126,7 +130,10 @@ public class Client {
 
 		//		String path = "/Users/migueljimenez/Desktop";
 
-		MetricFactory.registerConfigClass("apvillota", ClientConfig1.class);
+		MetricFactory.registerConfigClass(
+				"apvillota", 
+				"co/edu/icesi/driso/measurement/demo/config1.properties",
+				ClientConfig1.class);
 		father = MetricFactory.getMetric("apvillota", "father");
 
 		Metric ns1 = MetricFactory.getMetric("apvillota", "ns1");
