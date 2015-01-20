@@ -1,236 +1,289 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.1.7" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
-  realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="org.driso.measurement.metrics.Measurement" project="org.driso.reseco" 
-    file="/org.driso.reseco/src/org/driso/measurement/metrics/Measurement.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="498" y="773"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="org.driso.measurement.metrics.MetricException" project="org.driso.reseco" 
-    file="/org.driso.reseco/src/org/driso/measurement/metrics/MetricException.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="250" y="317"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="org.driso.measurement.metrics.Measurement.Entry" project="org.driso.reseco" 
-    file="/org.driso.reseco/src/org/driso/measurement/metrics/Measurement.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="142" y="770"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="org.driso.measurement.metrics.Metric" project="org.driso.reseco" 
-    file="/org.driso.reseco/src/org/driso/measurement/metrics/Metric.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="804" y="381"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="org.driso.measurement.metrics.MeasurementPhase" project="org.driso.reseco" 
-    file="/org.driso.reseco/src/org/driso/measurement/metrics/MeasurementPhase.java" binary="false" 
+<class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="co.edu.icesi.driso.measurement.metrics.Metric" project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/metrics/Metric.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="798" y="1171"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="422" width="443" x="1622" y="913"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="org.driso.measurement.metrics.MeasurementPhase.Level" project="org.driso.reseco" 
-    file="/org.driso.reseco/src/org/driso/measurement/metrics/MeasurementPhase.java" binary="false" 
+  <class id="2" language="java" name="co.edu.icesi.driso.measurement.report.MetricsWindow" project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/report/MetricsWindow.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="407" y="1172"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="314" width="350" x="47" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="org.driso.measurement.metrics.MeasurementPhase.Stage" project="org.driso.reseco" 
-    file="/org.driso.reseco/src/org/driso/measurement/metrics/MeasurementPhase.java" binary="false" 
+  <class id="3" language="java" name="co.edu.icesi.driso.measurement.demo.Client" project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/demo/Client.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="405" y="1435"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="116" width="185" x="2154" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="org.driso.measurement.metrics.MetricConfig" project="org.driso.reseco" 
-    file="/org.driso.reseco/src/org/driso/measurement/metrics/MetricConfig.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="800" y="791"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+  <class id="4" language="java" name="co.edu.icesi.driso.measurement.report.CalculatedMetricsPanel" 
+    project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/report/CalculatedMetricsPanel.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="638" width="492" x="1090" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="org.driso.measurement.report.MetricsChartPanel" project="org.driso.reseco" 
-    file="/org.driso.reseco/src/org/driso/measurement/report/MetricsChartPanel.java" binary="false" 
+  <class id="5" language="java" name="co.edu.icesi.driso.measurement.metrics.MetricException" 
+    project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/metrics/MetricException.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1368" y="681"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="188" width="230" x="437" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="org.driso.measurement.report.MetricsWindow" project="org.driso.reseco" 
-    file="/org.driso.reseco/src/org/driso/measurement/report/MetricsWindow.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1368" y="273"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+  <class id="6" language="java" name="co.edu.icesi.driso.measurement.metrics.MetricFactory" 
+    project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/metrics/MetricFactory.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="134" width="343" x="707" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="org.driso.measurement.MetricFactory" project="org.driso.reseco" 
-    file="/org.driso.reseco/src/org/driso/measurement/MetricFactory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="259" y="485"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+  <enumeration id="7" language="java" name="co.edu.icesi.driso.measurement.report.MetricsWindow.ChartType" 
+    project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/report/MetricsWindow.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="116" width="231" x="47" y="913"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="8" language="java" name="co.edu.icesi.driso.measurement.report.ActualMetricsPanel" 
+    project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/report/ActualMetricsPanel.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="836" width="492" x="1622" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="org.driso.reseco.measurement.APVillotaConfig" project="org.driso.reseco" 
-    file="/org.driso.reseco/src/org/driso/reseco/measurement/APVillotaConfig.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1273" y="1024"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+  <class id="9" language="java" name="co.edu.icesi.driso.measurement.metrics.Measurement" project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/metrics/Measurement.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="296" width="251" x="1898" y="1385"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="MainAPVillota" project="org.driso.reseco" 
-    file="/org.driso.reseco/src/MainAPVillota.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="801" y="67"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+  <class id="10" language="java" name="co.edu.icesi.driso.measurement.metrics.MeasurementPhase.Stage" 
+    project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/metrics/MeasurementPhase.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="242" width="191" x="1033" y="2285"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="14">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="15" name="measurements"/>      
-      <multiplicity id="16" minimum="0" maximum="2147483647"/>    
+  <class id="11" language="java" name="co.edu.icesi.driso.measurement.demo.ClientConfig2" project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/demo/ClientConfig2.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="188" width="272" x="1586" y="1721"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="co.edu.icesi.driso.measurement.demo.ClientConfig1" project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/demo/ClientConfig1.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="188" width="272" x="1274" y="1721"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="co.edu.icesi.driso.measurement.metrics.MetricConfig" 
+    project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/metrics/MetricConfig.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="296" width="272" x="1353" y="1385"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="co.edu.icesi.driso.measurement.metrics.MeasurementPhase" 
+    project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/metrics/MeasurementPhase.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="296" width="307" x="927" y="1721"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="co.edu.icesi.driso.measurement.metrics.Measurement.Entry" 
+    project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/metrics/Measurement.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="170" width="204" x="1898" y="1721"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="co.edu.icesi.driso.measurement.metrics.MeasurementPhase.Level" 
+    project="performance-metrics" 
+    file="/performance-metrics/src/main/java/co/edu/icesi/driso/measurement/metrics/MeasurementPhase.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="188" width="191" x="821" y="2057"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="17">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="18" name="metric"/>      
+      <multiplicity id="19" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="17">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="18" name="levels"/>      
-      <multiplicity id="19" minimum="0" maximum="2147483647"/>    
+  <generalization id="20">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <association id="21">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="22" name="phases"/>      
+      <multiplicity id="23" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="20">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="21" name="metricsPanel"/>      
-      <multiplicity id="22" minimum="0" maximum="1"/>    
+  <generalization id="24">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <association id="25">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="26" name="father"/>      
+      <multiplicity id="27" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="28">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="16"/>  
+  </nesting>  
+  <association id="29">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="30" name="measurements"/>      
+      <multiplicity id="31" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="23">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="24" name="father"/>      
-      <multiplicity id="25" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="26">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="27" name="stages"/>      
-      <multiplicity id="28" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="29">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <association id="30">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="31" name="measurement"/>      
-      <multiplicity id="32" minimum="0" maximum="1"/>    
+  <nesting id="32">    
+    <bendpoint x="1042" y="2057"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="10"/>  
+  </nesting>  
+  <nesting id="33">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="7"/>  
+  </nesting>  
+  <nesting id="34">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="15"/>  
+  </nesting>  
+  <association id="35">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="36" name="children"/>      
+      <multiplicity id="37" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="33">    
-    <bendpoint x="620" y="1236"/>    
-    <bendpoint x="594" y="1236"/>    
-    <bendpoint x="533" y="1236"/>    
-    <bendpoint x="503" y="1236"/>    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="6"/>  
-  </nesting>  
-  <association id="34">    
-    <bendpoint x="1162" y="381"/>    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="35" name="metric"/>      
-      <multiplicity id="36" minimum="0" maximum="1"/>    
+  <association id="38">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="39" name="config"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="37">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="38" name="config"/>      
-      <multiplicity id="39" minimum="0" maximum="1"/>    
+  <association id="41">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="42" name="measurement"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="40">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="41" name="phases"/>      
-      <multiplicity id="42" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="43">    
-    <bendpoint x="347" y="819"/>    
-    <bendpoint x="256" y="819"/>    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="3"/>  
-  </nesting>  
   <association id="44">    
-    <bendpoint x="975" y="603"/>    
-    <bendpoint x="1073" y="603"/>    
-    <bendpoint x="1073" y="567"/>    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="45" name="children"/>      
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="45" name="stages"/>      
       <multiplicity id="46" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="47">    
-    <bendpoint x="663" y="996"/>    
-    <bendpoint x="189" y="996"/>    
-    <bendpoint x="189" y="1435"/>    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="7"/>  
-  </nesting>  
+  <association id="47">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="48" name="metric"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="51" name="levels"/>      
+      <multiplicity id="52" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="53">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="54" name="chartType"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
