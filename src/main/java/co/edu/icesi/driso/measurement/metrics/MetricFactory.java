@@ -91,9 +91,10 @@ public class MetricFactory {
 	/**
 	 * Registers a new configuration class and its corresponding config file
 	 * 
-	 * @param criterion
-	 * @param configClass
-	 * @throws MetricException
+	 * @param criterion			The config class identifier
+	 * @param configClass		The config class to be registered
+	 * @throws MetricException	It's thrown when there is already a config 
+	 * 							class stored with the specified identifier
 	 */
 	public static void registerConfigClass(String criterion, String configFile, 
 			Class<? extends MetricConfig> configClass) throws MetricException {

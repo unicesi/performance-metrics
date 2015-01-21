@@ -444,7 +444,7 @@ public class ActualMetricsPanel extends JPanel {
 					// Left limit line
 					g2.drawLine(xLeftLimit, y1, rectX + (int) chartStartValue, y2);
 					
-					// Verify collision with previous label
+					// Verify collision with other labels
 					int labelStart = xLeftLimit - halfStrWidth;
 					int labelEnd = xLeftLimit - halfStrWidth 
 							+ smallFontMetrics.stringWidth(strChartStartValue);
