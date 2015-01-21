@@ -15,20 +15,20 @@ This file must contain all of the following properties:
 
 ###### Accepted values
 
-| Property    | Format                                                                                                      |
-| :---------- | :---------------------------------------------------------------------------------------------------------- |
-| identifier  | [Java valid identifiers](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.8) (JVI)         |
-| attributes  | Comma-separated JVI                                                                                         |
-| measureunit | a string (without quotes)                                                                                   |
-| stages      | Comma-separated JVI, each optionally followed by ":shared"                                                  |
-| levels      | Comma-separated JVI, each mandatorily followed by a parenthesized expression containing comma-separated JVI |
-| phases      | Comma-separated JVI, each mandatorily followed by a parenthesized expression containing comma-separated JVI |
+| Property    | Format                                                                                                        |
+| :---------- | :------------------------------------------------------------------------------------------------------------ |
+| identifier  | A [Java valid identifier](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.8) (JVI)          |
+| attributes  | Comma-separated JVIs                                                                                          |
+| measureunit | a string (without quotes)                                                                                     |
+| stages      | Comma-separated JVIs, each optionally followed by ":shared"                                                   |
+| levels      | Comma-separated JVIs, each mandatorily followed by a parenthesized expression containing comma-separated JVIs |
+| phases      | Comma-separated JVIs, each mandatorily followed by a parenthesized expression containing comma-separated JVIs |
 
 ###### Example
 
 | name        | value                                                                    |
 | :---------- | :----------------------------------------------------------------------- |
-| identifier  | mjimenez                                                                 |
+| identifier  | msorting                                                                 |
 | attributes  | NODE, COMPOSITE, COMPONENT                                               |
 | measureunit | s                                                                        |
 | stages      | Start:shared, End:shared                                                 |
