@@ -26,8 +26,8 @@ public class Client {
 
 		MetricFactory.registerConfigClass(
 				"apvillota", 
-				"co/edu/icesi/driso/measurement/demo/config1.properties", 
-				ClientConfig2.class);
+				"co/edu/icesi/driso/measurement/demo/configFile.properties", 
+				ClientConfig.class);
 		
 		father = MetricFactory.getMetric("apvillota", "grid0-control");
 
@@ -98,113 +98,6 @@ public class Client {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				MetricsWindow w1 = new MetricsWindow(
-						MetricsWindow.ChartType.CALCULATED_METRICS,
-						"Performance Metrics Report", 
-						father,
-						"Performance Chart",
-						"Processing nodes",
-						"Measurement phases");
-				w1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				w1.setVisible(true);
-
-				MetricsWindow w2 = new MetricsWindow(
-						MetricsWindow.ChartType.ACTUAL_METRICS,
-						"Performance Metrics Report", 
-						father,
-						"Performance Chart",
-						"Processing nodes",
-						"Measurement phases");
-				w2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				w2.setVisible(true);
-			}
-		});
-
-	}
-
-
-	public static void smain(String[] args) throws MetricException {
-
-		//		String path = "/Users/migueljimenez/Desktop";
-
-		MetricFactory.registerConfigClass(
-				"apvillota", 
-				"co/edu/icesi/driso/measurement/demo/config1.properties",
-				ClientConfig1.class);
-		father = MetricFactory.getMetric("apvillota", "father");
-
-		Metric ns1 = MetricFactory.getMetric("apvillota", "ns1");
-		Metric ns2 = MetricFactory.getMetric("apvillota", "ns2");
-		Metric ns3 = MetricFactory.getMetric("apvillota", "ns3");
-		Metric ns4 = MetricFactory.getMetric("apvillota", "ns4");
-		Metric ns5 = MetricFactory.getMetric("apvillota", "ns5");
-		Metric ns6 = MetricFactory.getMetric("apvillota", "ns6");
-		Metric ns7 = MetricFactory.getMetric("apvillota", "ns7");
-		Metric ns8 = MetricFactory.getMetric("apvillota", "ns8");
-
-		Metric nm1 = MetricFactory.getMetric("apvillota", "nm1");
-		Metric nm3 = MetricFactory.getMetric("apvillota", "nm3");
-		Metric nm5 = MetricFactory.getMetric("apvillota", "nm5");
-		Metric nm7 = MetricFactory.getMetric("apvillota", "nm7");
-
-		ns1.setMeasure("SORTING", "START", 1417812196303L);
-		ns1.setMeasure("SORTING", "END", 1417812196303L);
-
-		ns2.setMeasure("SORTING", "START", 1417812196304L);
-		ns2.setMeasure("SORTING", "END", 1417812196304L);
-
-		ns3.setMeasure("SORTING", "START", 1417812196305L);
-		ns3.setMeasure("SORTING", "END", 1417812196305L);
-
-		ns4.setMeasure("SORTING", "START", 1417812196305L);
-		ns4.setMeasure("SORTING", "END", 1417812196305L);
-
-		ns5.setMeasure("SORTING", "START", 1417812196306L);
-		ns5.setMeasure("SORTING", "END", 1417812196306L);
-
-		ns6.setMeasure("SORTING", "START", 1417812196307L);
-		ns6.setMeasure("SORTING", "END", 1417812196307L);
-
-		ns7.setMeasure("SORTING", "START", 1417812196308L);
-		ns7.setMeasure("SORTING", "END", 1417812196308L);
-
-		ns8.setMeasure("SORTING", "START", 1417812196310L);
-		ns8.setMeasure("SORTING", "END", 1417812196310L);
-
-		nm1.setMeasure("MERGE", "ONE", "START", 1417812196326L);
-		nm1.setMeasure("MERGE", "ONE", "END", 1417812196326L);
-
-		nm1.setMeasure("MERGE", "TWO", "START", 1417812196340L);
-		nm1.setMeasure("MERGE", "TWO", "END", 1417812196340L);
-
-		nm1.setMeasure("MERGE", "THREE", "START", 1417812196348L);
-		nm1.setMeasure("MERGE", "THREE", "END", 1417812196348L);
-
-		nm3.setMeasure("MERGE", "ONE", "START", 1417812196328L);
-		nm3.setMeasure("MERGE", "ONE", "END", 1417812196328L);
-
-		nm5.setMeasure("MERGE", "ONE", "START", 1417812196329L);
-		nm5.setMeasure("MERGE", "ONE", "END", 1417812196329L);
-
-		nm5.setMeasure("MERGE", "TWO", "START", 1417812196342L);
-		nm5.setMeasure("MERGE", "TWO", "END", 1417812196342L);
-
-		nm7.setMeasure("MERGE", "ONE", "START", 1417812196331L);
-		nm7.setMeasure("MERGE", "ONE", "END", 1417812196331L);
-
-		// merge shared measurements from children to father
-		father.merge(ns1, ns2, ns3, ns4, ns5, ns6, ns7, ns8, nm1, nm3, nm5, nm7);
-
-		//		try {
-		//			
-		//			father.report(new File(path + "/log-metricas-father.txt"), false);
-		//
-		//		} catch (IOException e) {
-		//			e.printStackTrace();
-		//		}
 
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {

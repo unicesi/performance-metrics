@@ -299,7 +299,8 @@ public abstract class MetricConfig implements Serializable {
 			}else{
 				throw new MetricException(19, "Phase \"" + tempPhase.getName() 
 						+ "\" must be configured both in properties file as "
-						+ "well in the configuration class");
+						+ "well in the configuration class. "
+						+ "Note this validation is case sensitive");
 			}
 		}
 	}

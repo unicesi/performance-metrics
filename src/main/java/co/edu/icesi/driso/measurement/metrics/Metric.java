@@ -183,18 +183,17 @@ public class Metric implements Serializable {
 	}
 	
 	private String recursiveReport(Metric metric, String tab) throws MetricException {
-		
 		String content = metric.identifier;
-		String[] configuredAttributes = metric.getConfig().getAttributes();
+		String[] configuredAttributes = metric.config.getAttributes();
 		
 		// Add attributes' values to the content
 		for (int i = 0; i < configuredAttributes.length; i++) {
 			content += "\t" + metric.getAttribute(configuredAttributes[i]);
 		}
-		
+
 		// Add phases' values to the content
-		for (int i = 0; i < metric.config.configurePhases().size(); i++) {
-			MeasurementPhase tempPhase = metric.config.configurePhases().get(i);
+		for (int i = 0; i < metric.config.getPhases().size(); i++) {
+			MeasurementPhase tempPhase = metric.config.getPhases().get(i);
 			HashMap<String, List<Measurement.Entry>> tempMeasurements = 
 					metric.getPhaseMeasurements(tempPhase);
 
@@ -207,11 +206,11 @@ public class Metric implements Serializable {
 				levelValues.put(tempLevel, levelValue);
 				
 				if(!tempLevel.equals(MeasurementPhase.Level.DEFAULT_NAME)){
-					content += "\t" + metric.getConfig().scaleValue(levelValue);
+					content += "\t" + metric.config.scaleValue(levelValue);
 				}
 			}
 		
-			content += "\t" + metric.getConfig().scaleValue(tempPhase.calculatePhaseValue(levelValues));
+			content += "\t" + metric.config.scaleValue(tempPhase.calculatePhaseValue(levelValues));
 			content += "\t" + tempPhase.toString(tempMeasurements);
 		}
 		
@@ -231,7 +230,7 @@ public class Metric implements Serializable {
 	 */
 	public HashMap<String, List<Measurement.Entry>> getPhaseMeasurements(
 			MeasurementPhase phase){
-		
+
 		HashMap<String, List<Measurement.Entry>> measurementsPerLevel =
 				new HashMap<String, List<Measurement.Entry>>();
 		MeasurementPhase.Level[] levels = phase.getLevels();

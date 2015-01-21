@@ -55,7 +55,9 @@ public class MetricFactory {
 				MetricConfig configInstance = configInstances.get(criterion);
 				
 				if(configInstance == null){
-					configInstance = clazz.getConstructor(String.class).newInstance(configFile);
+					configInstance = 
+							clazz.getConstructor(String.class)
+							.newInstance(configFile);
 					configInstances.put(criterion, configInstance);
 				}
 				
@@ -70,7 +72,10 @@ public class MetricFactory {
 			} catch (InvocationTargetException e) {
 				e.printStackTrace();
 			} catch (NoSuchMethodException e) {
-				e.printStackTrace();
+				throw new MetricException(21, "Children classes of the MetricConfig "
+						+ "class must overwrite a public constructor with "
+						+ "the configuration file (path name as String) as "
+						+ "an input parameter", e);
 			} catch (SecurityException e) {
 				e.printStackTrace();
 			}

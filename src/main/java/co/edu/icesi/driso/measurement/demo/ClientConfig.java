@@ -18,9 +18,9 @@ import co.edu.icesi.driso.measurement.metrics.MetricException;
  * @author Miguel A. Jiménez
  * @date 26/11/2014
  */
-public class ClientConfig2 extends MetricConfig {
+public class ClientConfig extends MetricConfig {
 
-	public ClientConfig2(String configFile) {
+	public ClientConfig(String configFile) {
 		super(configFile);
 	}
 
@@ -31,6 +31,7 @@ public class ClientConfig2 extends MetricConfig {
 
 	@Override
 	public List<MeasurementPhase> configurePhases() throws MetricException {
+		
 		// configured phases
 		List<MeasurementPhase> phases = new ArrayList<MeasurementPhase>();
 		
@@ -39,15 +40,15 @@ public class ClientConfig2 extends MetricConfig {
 			private static final long serialVersionUID = 1L;
 			
 			@Override
-			public long calculateLevelValue(List<Measurement.Entry> measurements){
+			public long calculateLevelValue(List<Measurement.Entry> entries){
 				long value = 0;
 				/*
 				 *  "measurements" contains two elements that correspond to
 				 *  the two stages in the level, in the same order they were
 				 *  registered: 0:start, 1:end
 				 */
-				Measurement.Entry startEntry = measurements.get(0);
-				Measurement.Entry endEntry = measurements.get(1);
+				Measurement.Entry startEntry = entries.get(0);
+				Measurement.Entry endEntry = entries.get(1);
 				
 				Measurement start = startEntry.getMeasurement();
 				Measurement end = endEntry.getMeasurement();
@@ -100,7 +101,7 @@ public class ClientConfig2 extends MetricConfig {
 			private static final long serialVersionUID = 1L;
 			
 			@Override
-			public long calculateLevelValue(List<Measurement.Entry> measurements){
+			public long calculateLevelValue(List<Measurement.Entry> entries){
 				long value = 0;
 				
 				/*
@@ -108,8 +109,8 @@ public class ClientConfig2 extends MetricConfig {
 				 *  the two stages in the level, in the same order they were
 				 *  registered: 0:start, 1:end
 				 */
-				Measurement.Entry startEntry = measurements.get(0);
-				Measurement.Entry endEntry = measurements.get(1);
+				Measurement.Entry startEntry = entries.get(0);
+				Measurement.Entry endEntry = entries.get(1);
 				
 				Measurement start = startEntry.getMeasurement();
 				Measurement end = endEntry.getMeasurement();
@@ -162,11 +163,11 @@ public class ClientConfig2 extends MetricConfig {
 				private static final long serialVersionUID = 1L;
 				
 				@Override
-				public long calculateLevelValue(List<Measurement.Entry> measurements){
+				public long calculateLevelValue(List<Measurement.Entry> entries){
 					long value = 0;
 					
-					Measurement.Entry startEntry = measurements.get(0);
-					Measurement.Entry endEntry = measurements.get(1);
+					Measurement.Entry startEntry = entries.get(0);
+					Measurement.Entry endEntry = entries.get(1);
 					
 					Measurement start = startEntry.getMeasurement();
 					Measurement end = endEntry.getMeasurement();
