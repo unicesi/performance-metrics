@@ -7,9 +7,11 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.imageio.ImageIO;
@@ -381,25 +383,30 @@ public class ActualMetricsPanel extends JPanel {
 			FontMetrics fontMetrics, int x, int x2, int y, int y1, int y2){
 		int leftOffset = 0;
 		long executionStart = getExecutionStart(metric);
+		ArrayList<Point> labelsPoint = new ArrayList<Point>();
 
 		// Father's values
 		fillRectanglePerLevel(g2, metric, executionStart, 
-				leftOffset + fontPadding + x, x2, y2 - 1, y1, y2);
+				leftOffset + fontPadding + x, x2, y2 - 1, y1, y2, labelsPoint);
 
 		// Children's values
 		for (int i = 0; i < metric.getChildren().size(); i++) {
 			y -= nodeBlockHeight;
-			fillRectanglePerLevel(g2, metric.getChildren().get(i), executionStart, 
-					leftOffset + fontPadding + x, x2, y, y1, y2);
+			fillRectanglePerLevel(g2, metric.getChildren().get(i), 
+							executionStart, leftOffset + fontPadding + x, 
+							x2, y, y1, y2, labelsPoint);
 		}
 	}
 
 	private void fillRectanglePerLevel(Graphics2D g2, Metric metric, 
-			long executionStart, int x, int x2, int y, int y1, int y2){
+			long executionStart, int x, int x2, int y, int y1, int y2, 
+			ArrayList<Point> labelsPoint){
 
 		int rectX = x;
 		int yOffset = 0;
 		FontMetrics smallFontMetrics = g2.getFontMetrics(smallFont);
+		
+		ArrayList<String> drawnLabels = new ArrayList<String>();
 
 		// Then: fill rectangle per level
 		for (int i = 0; i < metric.getConfig().getPhases().size(); i++) {
@@ -415,6 +422,12 @@ public class ActualMetricsPanel extends JPanel {
 					double chartStartValue = metric.getConfig().scaleValue(levelValues[0] * scaleFactor - executionStart * scaleFactor);
 					double chartEndValue = metric.getConfig().scaleValue(levelValues[1] * scaleFactor - executionStart * scaleFactor);
 					String strChartStartValue = "" + (metric.getConfig().scaleValue(levelValues[0] - executionStart));
+					
+					// If the value to be drawn has been already drawn, skip
+					if(drawnLabels.contains(strChartStartValue))
+						continue;
+					else
+						drawnLabels.add(strChartStartValue);
 
 					int barWidth = (int) (chartEndValue - chartStartValue);
 					barWidth = barWidth == 0 ? 2 : barWidth;
@@ -430,18 +443,25 @@ public class ActualMetricsPanel extends JPanel {
 
 					// Left limit line
 					g2.drawLine(xLeftLimit, y1, rectX + (int) chartStartValue, y2);
-					// Number labels
-					g2.setColor(Color.BLACK);
-					g2.setFont(smallFont);
-
-					//					AffineTransform orig = g2.getTransform();
-					//					AffineTransform at = new AffineTransform();
-					//			        at.setToRotation(Math.toRadians(-90), xLeftLimit + 4, (int) (y2 + fontPadding * 3.5 + leftLimitWidth));
-					//			        g2.setTransform(at);
-					//					g2.drawString(strChartStartValue, xLeftLimit + 4, (int) (y2 + fontPadding * 3.5 + leftLimitWidth));
-					//					g2.setTransform(orig);
-
-					g2.drawString(strChartStartValue, xLeftLimit - halfStrWidth, y2 + fontPadding * 2);
+					
+					// Verify collision with previous label
+					int labelStart = xLeftLimit - halfStrWidth;
+					int labelEnd = xLeftLimit - halfStrWidth 
+							+ smallFontMetrics.stringWidth(strChartStartValue);
+					Point tempPoint = new Point(labelStart, labelEnd);
+					
+					if(!verifyCollision(labelsPoint, labelStart, labelEnd)){
+						labelsPoint.add(tempPoint);
+						
+						// Number labels
+						g2.setColor(Color.BLACK);
+						g2.setFont(smallFont);
+						g2.drawString(strChartStartValue, xLeftLimit - halfStrWidth, y2 + fontPadding * 2);
+						
+						// Tick
+						g2.setStroke(basicStroke);
+						g2.drawLine(xLeftLimit, y2, rectX + (int) chartStartValue, y2 + 3);
+					}
 
 					// Bar
 					g2.setColor(tempColor);
@@ -454,6 +474,23 @@ public class ActualMetricsPanel extends JPanel {
 		}
 
 		g2.setColor(Color.BLACK);
+	}
+	
+	private boolean verifyCollision(ArrayList<Point> labelsPoint, int labelStart, int labelEnd){
+		boolean b = false;
+		
+		if(!labelsPoint.contains(new Point(labelStart, labelEnd))){
+			for (Point point : labelsPoint) {
+				if(labelStart >= point.x && labelStart <= point.y 
+						 || point.x >= labelStart && point.x <= labelEnd){
+					System.out.println(point);
+					b = true;
+					break;
+				}
+			}
+		}
+		
+		return b;
 	}
 
 	private long[] getFirstAndLastStageValues(Metric metric, MeasurementPhase phase, MeasurementPhase.Level level){

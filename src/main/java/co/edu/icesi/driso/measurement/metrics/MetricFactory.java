@@ -13,8 +13,6 @@ import java.util.HashMap;
  */
 public class MetricFactory {
 	
-	
-	
 	/**
 	 * Contains the registered configuration classes
 	 */
@@ -37,12 +35,14 @@ public class MetricFactory {
 	}
 
 	/**
+	 * Creates a metric instance based on the specified configuration class
 	 * 
-	 * 
-	 * @param criterion
-	 * @param identifier
-	 * @return
-	 * @throws MetricException 
+	 * @param criterion				The config class identifier
+	 * @param identifier			The new metric object's identifier
+	 * @return						A new instance of Metric
+	 * @throws MetricException 		It's thrown when the configuration class
+	 * 								does not contains a public constructor
+	 * 								overwriting MetricConfig's constructor
 	 */
 	public static Metric getMetric(String criterion, String identifier) throws MetricException {
 		
@@ -89,7 +89,7 @@ public class MetricFactory {
 	}
 	
 	/**
-	 * 
+	 * Registers a new configuration class and its corresponding config file
 	 * 
 	 * @param criterion
 	 * @param configClass
