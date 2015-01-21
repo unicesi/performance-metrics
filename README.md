@@ -1,4 +1,4 @@
-Performance-Metrics
+Performance metrics
 ===================
 
 #### The configuration file
