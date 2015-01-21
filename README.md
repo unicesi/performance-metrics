@@ -1,6 +1,13 @@
 Performance metrics
 ===================
 
+#### The charts
+
+![Measured data per phase](https://cloud.githubusercontent.com/assets/1284036/5846207/fa2a3d9a-a18f-11e4-9bd1-1b6bddb89bd1.png)
+---
+![Time lapses per phase](https://cloud.githubusercontent.com/assets/1284036/5846208/fa3e104a-a18f-11e4-99c2-ff4e8c2af0d2.png)
+---
+
 #### The configuration file
 
 The configuration file is a .properties file that must be provided when registering a configuration class in the metrics factory (cf. [MetricFactory](https://github.com/unicesi/performance-metrics/blob/master/src/main/java/co/edu/icesi/driso/measurement/metrics/MetricFactory.java)). Its main purpose is to set a general structure for metrics, without calculation or formatting strategies.
