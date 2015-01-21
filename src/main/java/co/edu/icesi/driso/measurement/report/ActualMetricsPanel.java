@@ -405,8 +405,6 @@ public class ActualMetricsPanel extends JPanel {
 		int rectX = x;
 		int yOffset = 0;
 		FontMetrics smallFontMetrics = g2.getFontMetrics(smallFont);
-		
-		ArrayList<String> drawnLabels = new ArrayList<String>();
 
 		// Then: fill rectangle per level
 		for (int i = 0; i < metric.getConfig().getPhases().size(); i++) {
@@ -422,12 +420,6 @@ public class ActualMetricsPanel extends JPanel {
 					double chartStartValue = metric.getConfig().scaleValue(levelValues[0] * scaleFactor - executionStart * scaleFactor);
 					double chartEndValue = metric.getConfig().scaleValue(levelValues[1] * scaleFactor - executionStart * scaleFactor);
 					String strChartStartValue = "" + (metric.getConfig().scaleValue(levelValues[0] - executionStart));
-					
-					// If the value to be drawn has been already drawn, skip
-					if(drawnLabels.contains(strChartStartValue))
-						continue;
-					else
-						drawnLabels.add(strChartStartValue);
 
 					int barWidth = (int) (chartEndValue - chartStartValue);
 					barWidth = barWidth == 0 ? 2 : barWidth;
@@ -483,7 +475,6 @@ public class ActualMetricsPanel extends JPanel {
 			for (Point point : labelsPoint) {
 				if(labelStart >= point.x && labelStart <= point.y 
 						 || point.x >= labelStart && point.x <= labelEnd){
-					System.out.println(point);
 					b = true;
 					break;
 				}
